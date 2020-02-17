@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="406881ea-7698-4851-b422-365b48b83277" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1Xjz5L9mvV1RILpKSRy10rgdQ6J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../courserajava.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="406881ea-7698-4851-b422-365b48b83277" name="Default Changelist" comment="" />
+      <created>1581574106384</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581574106384</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581574374058">
+      <screen x="0" y="27" width="1920" height="986" />
+    </state>
+    <state x="418" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.986@0.27.1920.986" timestamp="1581574374058" />
+    <state x="801" y="412" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581574183589">
+      <screen x="0" y="27" width="1920" height="986" />
+    </state>
+    <state x="801" y="412" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1920.986@0.27.1920.986" timestamp="1581574183589" />
+    <state x="738" y="281" width="424" height="491" key="FileChooserDialogImpl" timestamp="1581574298183">
+      <screen x="0" y="27" width="1920" height="986" />
+    </state>
+    <state x="738" y="281" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.986@0.27.1920.986" timestamp="1581574298183" />
+    <state x="443" y="97" width="1024" height="852" key="SettingsEditor" timestamp="1581574439344">
+      <screen x="0" y="27" width="1920" height="986" />
+    </state>
+    <state x="443" y="97" width="1024" height="852" key="SettingsEditor/0.27.1920.986@0.27.1920.986" timestamp="1581574439344" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/GladLibMap.java</url>
+          <line>179</line>
+          <properties class="GladLibMap" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GladLibMap.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

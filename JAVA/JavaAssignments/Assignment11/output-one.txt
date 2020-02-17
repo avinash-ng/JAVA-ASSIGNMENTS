@@ -1,0 +1,12 @@
+The character A appeared exactly 3 times 
+The character \n appeared exactly 1 times 
+The character e appeared exactly 1 times 
+The character V appeared exactly 1 times 
+The character h appeared exactly 2 times 
+The character i appeared exactly 1 times 
+The character K appeared exactly 2 times 
+The character l appeared exactly 2 times 
+The character M appeared exactly 1 times 
+The character N appeared exactly 1 times 
+The character 32 appeared exactly 2 times 
+The character o appeared exactly 1 times 

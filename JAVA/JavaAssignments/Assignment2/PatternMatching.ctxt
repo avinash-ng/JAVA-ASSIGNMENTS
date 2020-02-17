@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PatternMatching
+comment1.params=s
+comment1.target=boolean\ containsAToZ(java.lang.String)
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3
