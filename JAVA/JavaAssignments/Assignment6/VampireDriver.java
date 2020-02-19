@@ -79,7 +79,7 @@ public class VampireDriver {
     public static void main(String args[]) {
         Vampire v = new Vampire();
         int i, count = 0;
-        for (i = 1260; ; i++) {
+        for (i = 11; ; i++) {
             if (count < 100) {
                 if (v.isVampireNumber(i)) {
                     System.out.println(i);
