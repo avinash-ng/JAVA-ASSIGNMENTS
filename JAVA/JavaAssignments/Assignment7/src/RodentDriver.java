@@ -5,6 +5,9 @@
   * Make the methods of Rodent abstract whenever possible and all classes should have default constructors that print a message about that class.
 
 */
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 abstract class Rodents {
 
    abstract void print();
@@ -19,59 +22,74 @@ abstract class Rodents {
 }
 
 class Mouse extends Rodents{
+    Logger logger = Logger.getLogger(Mouse.class.getName());
     Mouse(){
-        System.out.println("Inside Mouse constructor....");
+//         System.out.println("Inside Mouse constructor....");
+         logger.log(Level.INFO, " Inside Mouse constructor...... ");
     }
 
     void eat(){
-        System.out.println("Mouse eating.........");
+//         System.out.println("Mouse eating.........");
+       logger.log(Level.INFO, " Mouse Eating.......... ");
     }
 
     void print(){
-        System.out.println("Printing Mouse.............");
+//         System.out.println("Printing Mouse.............");
+       logger.log(Level.INFO, " Printing Mouse...........");
     }
 
     void mouseSpecific(){
-        System.out.println("Function specific to mouse");
+//         System.out.println("Function specific to mouse");
+       logger.log(Level.INFO, " Function specific to mouse ");
     }
 }
 
 class Gerbil extends Rodents{
-
+   Logger logger = Logger.getLogger(Gerbil.class.getName());
    Gerbil(){
-        System.out.println("Inside gerbil constructor....");
+//         System.out.println("Inside gerbil constructor....");
+         logger.log(Level.INFO, " Inside gerbil constructor........... ");
+
     }
 
     void eat(){
-        System.out.println("Gerbil eating.........");
+//         System.out.println("Gerbil eating.........");
+        logger.log(Level.INFO, " Gerbil eating........... ");
     }
 
     void print(){
-        System.out.println("Printing Gerbil.............");
+         logger.log(Level.INFO, " Printing Gerbil........... ");
+//         System.out.println("Printing Gerbil.............");
     }
 
     void gerbilSpecific(){
-        System.out.println("Function specific to gerbil");
+         logger.log(Level.INFO, " Function specific to gerbil ");
+//         System.out.println("Function specific to gerbil");
     }
 }
 
 class Hamster extends Rodents{
-
+    Logger logger = Logger.getLogger(Hamster.class.getName());
     Hamster(){
-        System.out.println("Inside hamster constructor....");
+//         System.out.println("Inside hamster constructor....");
+        logger.log(Level.INFO, " Inside hamster constructor........ ");
+       
     }
 
 
     void eat(){
-        System.out.println("Hamster eating.........");
+//         System.out.println("Hamster eating.........");
+         logger.log(Level.INFO, " Hamster eating............ ");
     }
 
     void print(){
-        System.out.println("Printing hamster.............");
+//         System.out.println("Printing hamster.............");
+         logger.log(Level.INFO, " Printing hamster............. ");
     }
 
     void hamsterSpecific(){
-        System.out.println("Function specific to hamster");
+//         System.out.println("Function specific to hamster");
+         logger.log(Level.INFO, " Function specific to hamster ");
     }
 }
 
