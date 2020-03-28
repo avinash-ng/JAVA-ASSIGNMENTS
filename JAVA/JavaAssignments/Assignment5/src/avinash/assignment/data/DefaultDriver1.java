@@ -7,19 +7,27 @@
 package avinash.assignment.data;
 
 import static java.lang.System.out;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
-public class DefaultDriver1 {
-    int variable1;
-    char variable2;
-
+public class DefaultClass1 {
+    private int variable1;
+    private char variable2;
+    private Logger logger = Logger.getLogger(DefaultClass1.class.getName());
     public void printInstance(){
-        out.println(variable1);         //default int value is 0
-        out.println(variable2);         //prints unicode which is a default for character
+        logger.log(Level.INFO, "variable1 = "+ variable1);         //default int value is 0
+        logger.log(Level.INFO, "variable2 = "+ variable2);         //prints unicode which is a default for character
     }
 
-    public void printLocal(int local1, int local2){
-        out.println(local1);
-        out.println(local2);
+    public void printLocal(){
+    /*    int local1, local2;
+        logger.log(Level.INFO, "local1 = "+local1);
+        logger.log(Level.INFO, "local2 = "+local2);
+        This will not be executed because the local variables have not been initialized
+    
+    */
     }
+
+
 }
 
