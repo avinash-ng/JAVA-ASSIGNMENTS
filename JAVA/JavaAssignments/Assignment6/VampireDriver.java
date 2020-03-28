@@ -4,22 +4,24 @@
  */
 
 import java.util.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 class Vampire
 {
-    boolean hasDigits(int a, int b){
+    boolean hasDigits(int param1, int param2){
        int arr1[] = new int[10];
-       int ind;
-       while(a > 0){
-           ind = a%10;
-           arr1[ind] += 1;
-           a = a/10;
+       int index;
+       while(param1 > 0){
+           index = param1%10;
+           arr1[index] += 1;
+           param1 = param1/10;
        }
 
        int arr2[] = new int[10];
-       while(b > 0){
-           ind = b%10;
-           arr2[ind] += 1;
-           b = b/10;
+       while(param2 > 0){
+           index = param2%10;
+           arr2[index] += 1;
+           param2 = param2/10;
        }
        int i;
        for(i=0; i<10; i++){
@@ -30,39 +32,39 @@ class Vampire
        return true;
     }
 
-    boolean containTrailingZeros(int a){
-        if(a%10 == 0)
+    boolean containTrailingZeros(int number){
+        if(number%10 == 0)
             return true;
         return false;
     }
 
-    int countDigits(int a){
+    int countDigits(int number){
         int count = 0;
-        while(a/10 > 0){
+        while(number/10 > 0){
             count += 1;
-            a = a/10;
+            number = number/10;
         }
         count += 1;
         return count;
     }
 
-    boolean isVampireNumber(int a){
-        int digits = countDigits(a);
-        if(digits%2 != 0)
+    boolean isVampireNumber(int number){
+        int number_digits = countDigits(number);
+        if(number_digits%2 != 0)
             return false;
-        int i, j = (int)Math.sqrt(a);
+        int num, number_sqrt = (int)Math.sqrt(number);
 
-        for(i=2; i<=j;i++){
-            if(a%i != 0)
+        for(num =2; num<=number_sqrt; num++){
+            if(number%num != 0)
                 continue;
-//           System.out.println(i+" "+(a/i));
-            if((countDigits(i) == digits/2) && (countDigits(a/i) == digits/2)) {
-                if(((containTrailingZeros(i))) && containTrailingZeros(a/i))
+
+            if((countDigits(num) == number_digits/2) && (countDigits(number/num) == number_digits/2)) {
+                if(((containTrailingZeros(num))) && containTrailingZeros(number/num))
                     return false;
 
-                   int cn =  countDigits(a/i);
-                    int number = i*(int)Math.pow(10, cn) + (a/i);
-                    if (hasDigits(a, number))
+                   int digits =  countDigits(number/num);
+                    int number1 = num*(int)Math.pow(10, digits) + (number/num);
+                    if (hasDigits(number, number1))
                     {
                          return true;
                     }
@@ -76,13 +78,15 @@ class Vampire
     }
 }
 public class VampireDriver {
+
     public static void main(String args[]) {
-        Vampire v = new Vampire();
-        int i, count = 0;
-        for (i = 11; ; i++) {
+        Logger logger = Logger.getAnonymousLogger();
+        Vampire vampire = new Vampire();
+        int number, count = 0;
+        for (number = 11; ; number++) {
             if (count < 100) {
-                if (v.isVampireNumber(i)) {
-                    System.out.println(i);
+                if (vampire.isVampireNumber(number)) {
+                    logger.info(number + " is a vampire number ");
                     count += 1;
                 }
             }
