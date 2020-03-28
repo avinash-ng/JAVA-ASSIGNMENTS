@@ -2,18 +2,24 @@
  *  Create a class with two (overloaded) constructors. Using this, call the second constructor inside the first one.
  */
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class Constructor {
-    String a;
+    String string;
     Constructor(){
-        System.out.println("Inside constructor without parameters");
+        logger.log(Level.INFO, "Inside default constructors");
     }
-    Constructor(String a){
+    
+    Constructor(String localString){
         this();
-        System.out.println("With parameters");
+        string = localString;
+        logger.log(Level.INFO, "Inside a constructor with arguments");
     }
+    
     public static void main(String args[]){
         new Constructor("hi hello");
     }
+    
 }
 
