@@ -4,24 +4,28 @@
  */
 
 package avinash.assignment.main;
-import data.DefaultDriver1;
+import avinash.assignment.data.DefaultClass1;
 import java.util.*;
-import avinash.assignment.singleton.DefaultDriver2;
+import avinash.assignment.singleton.DefaultClass1;
 
 public class MainDriver {
 
     public static void main(String args[]){
-        DefaultDriver1 d1;
+        DefaultClass1 dClass1Obj;
         {
-            d1 = new DefaultDriver1();
+            dClass1Obj = new DefaultClass1();
         }
-        d1.printInstance();
-        d1.printLocal(1,2);
-
+        dClass1Obj.printInstance();
+       
         /**
-         * calling setvar1 gives error, because it is a static method trying to access non-static variable
-         *  DefaultDriver2 d2 = DefaultDriver2.setvar1("Hello");
-         *  d2.print();
+         * dClass1Obj.printLocal();
+         * printLocal also gives error because of localvariables not initialized 
+         */
+        
+        /**
+         * calling setString gives error, because it is a static method trying to access non-static variable
+         *  DefaultClass2 dClass2Obj = DefaultClass2.setString("Hello");
+         *  dClass2Obj.print();
          */
     }
 
