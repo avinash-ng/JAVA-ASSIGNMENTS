@@ -8,29 +8,37 @@
 
 
 
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import java.util.*;
 
 class ExceptionOne extends Exception{
+    Logger logger = Logger.getLogger(ExceptionOne.class.getName());
     ExceptionOne(String message){
-        System.out.println("ExceptionOne raised "+message);
+//         System.out.println("ExceptionOne raised "+message);
+        logger.log(Level.INFO, " ExceptionOne raised "+message);
     }
 }
 
 class ExceptionTwo extends Exception{
+    Logger logger = Logger.getLogger(ExceptionTwo.class.getName());
     ExceptionTwo(String message){
-        System.out.println("ExceptionTwo raised "+message);
+//         System.out.println("ExceptionTwo raised "+message);
+        logger.log(Level.INFO, " ExceptionTwo raised "+message);
     }
 }
 
 class ExceptionThree extends Exception{
+    Logger logger = Logger.getLogger(ExceptionThree.class.getName());
     ExceptionThree(String message){
-        System.out.println("ExceptionThree raised "+message);
+//         System.out.println("ExceptionThree raised "+message);
+        logger.log(Level.INFO, " ExceptionThree raised "+message);
     }
 }
 
 
 public class ErrorHandlingDriver {
+    Logger logger = Logger.getLogger(ErrorHandlingDriver.class.getName());
     public static void  throwException(int arr[]) throws ExceptionOne, ExceptionTwo, ExceptionThree{
        int i, l= arr.length;
 
@@ -52,12 +60,14 @@ public class ErrorHandlingDriver {
             throwException(arr);
         }
         catch (ExceptionOne | ExceptionTwo  | ExceptionThree ex){
-            System.out.println("Exception caught");
+//             System.out.println("Exception caught");
+            logger.log(Level.SEVERE, " Exception caught ");
         }
     
     
         finally {
-            System.out.println("Inside finally clause");
+//             System.out.println("Inside finally clause");
+            logger.log(Level.INFO, " Inside finally clause ");
         }
     }
 }
