@@ -3,12 +3,19 @@
 */
 
 
-class Outer{
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
+class Outer{
+    
     class Inner{
-        Inner(String s){
-            System.out.println(s);
-            System.out.println("Inside inner of outer ");
+        Logger logger = Logger.getLogger(Inner.class.getName());
+        Inner(String string){
+            // System.out.println(s);
+            // System.out.println("Inside inner of outer ");
+
+            logger.log(Level.INFO, " string = "+ string);
+            logger.log(Level.INFO, " Inside inner of outer ");
         }
     }
 }
@@ -19,11 +26,12 @@ class Outer1{
     
     
     class Inner1 extends Outer.Inner{
-        
-        Inner1(Outer o){
+        Logger logger = Logger.getLogger(Inner1.class.getName());    
+        Inner1(Outer outer){
             
-            o.super("Hello");
-            System.out.println("creating inner1 class of outer1");
+            outer.super("Hello");
+            // System.out.println("creating inner1 class of outer1");
+            logger.log(Level.INFO, " creating inner1 class of outer1 ");
         
         }
     
