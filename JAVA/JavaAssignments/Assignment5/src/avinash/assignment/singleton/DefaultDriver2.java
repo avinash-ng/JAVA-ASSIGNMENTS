@@ -6,24 +6,25 @@
 
 package avinash.assignment.singleton;
 
-public class DefaultDriver2 {
-     String var1;
+public class DefaultClass2 {
+     String string;
 
     /**
-     * this method raises error since we are using non static variable inside a static method.
-     * we can make var1 as static then we must make print method also static, or else
-     * we can make method setVar1 as non static
+     * this method raises error since we are using non static variable inside a static method. We have two options 
+     * 1. we can make "string" variable as static then we must make print method also static, or else
+     * 2. we can make method setString as non static
      *
      *
-     * public static DefaultDriver2 setVar1(String s){
-     *         var1 = s;
-     *         return new DefaultDriver2();
+     * public static DefaultClass2 setString(String s){
+     *         string = s;
+     *         return new DefaultClass2();
      *}
      *
 
      */
      public void print(){
-              System.out.println(var1);
+               Logger logger = Logger.getLogger(DefaultClass2.class.getName());
+               logger.log(Level.INFO, "string = "+string);
      }
 
 }
