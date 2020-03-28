@@ -5,13 +5,15 @@
  *
  * 4. Complete the previous exercise by creating objects to attach to the array of references.
  */
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class ThirdOne {
 
-    static String s;
-    ThirdOne(String str){
-        s = str;
-        System.out.println(str);
+    static String string;
+    ThirdOne(String localString){
+        string = localString;
+        logger.log(Level.INFO, "string = "+string);
 
     }
     public static void main(String args[]){
