@@ -7,6 +7,9 @@
 
 */
 import java.util.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 class Cycle {
 
     int speed;
@@ -46,13 +49,16 @@ class Cycle {
 class Unicycle extends Cycle{
 
 
+    Logger logger = Logger.getLogger(Unicycle.class.getName());
     Unicycle(){
         wheels = 1;
-        System.out.println("Inside unicyle constructor");
+        logger.log(Level.INFO, " Inside unicycle constructor ");
+//         System.out.println("Inside unicyle constructor");
     }
 
     public void balance(){
-        System.out.println("unicycle balanced");
+         logger.log(Level.INFO, " unicycle balanced ");
+//         System.out.println("unicycle balanced");
     }
 
 }
@@ -60,28 +66,35 @@ class Unicycle extends Cycle{
 class Bicycle extends Cycle{
 
 
+   Logger logger = Logger.getLogger(Bicycle.class.getName());
    Bicycle(){
         wheels = 2;
-        System.out.println("Inside bicyle constructor");
+        logger.log(Level.INFO, " Inside bicycle constructor ");
+//         System.out.println("Inside bicyle constructor");
     }
 
     public void balance(){
-        System.out.println("bicycle balanced");
+        logger.log(Level.INFO, " bicycle balanced ");
+//         System.out.println("bicycle balanced");
+      
     }
 
 }
 class Tricycle extends Cycle{
 
 
+    Logger logger = Logger.getLogger(Tricycle.class.getName());
     Tricycle(){
         wheels = 1;
-        System.out.println("Inside Tricycle constructor");
+//         System.out.println("Inside Tricycle constructor");
+        logger.log(Level.INFO, " inside Tricycle constructor " );
     }
 
 }
 
 class CycleDriver{
     public static void main(String args[]){
+        Logger logger = Logger.getLogger(CycleDriver.class.getName());
         Unicycle ucycle = new Unicycle();
         Bicycle bcycle = new Bicycle();
         Tricycle tcycle = new Tricycle();
@@ -106,7 +119,8 @@ class CycleDriver{
 //            ((Tricycle)cycle_arr[0]).balance();
         }
         catch(Exception ex){
-            System.out.println("Cannot find balance() method");
+//             System.out.println("Cannot find balance() method");
+            logger.log(Level.INFO, " Cannot find balance() method ");
         }
     }
 }
