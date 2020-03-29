@@ -6,45 +6,46 @@ import java.util.*;
 import java.io.*;
 class MapDriver
 {
-    static HashMap<String, Integer> map = new HashMap<String, Integer>();
-    static FileReader in ;
-    static FileWriter output;
-    static void builtMap(String fileName) throws Exception{
-        in = new FileReader(fileName);
-        output = new FileWriter("output-"+fileName);
-
-        int c;
-        while((c=in.read()) != -1)  {
-            char ch = (char)c;
-            String key = "";
-            if(ch == '\n')
-                key = "\\n";
-            else if(ch == '\t')
-                key = "\\t";
-            else if(ch == '\r')
-                key = "\\r";
+   
+    static HashMap<String, Integer> mapper = new HashMap<String, Integer>();
+    static FileReader inputReader ;
+    static FileWriter outputWriter;
+    
+    static void buildMap(String fileName) throws Exception{
+        inputReader = new FileReader(fileName);
+        outputWriter = new FileWriter("output-"+fileName);
+        int charAsInt;
+        while((charAsInt = inputReader.read()) != -1)  {
+               char character = (char)charAsInt;
+               String key= "";
+               if(character == '\n')
+                  key = "\\n";
+               else if(character == '\t')
+                  key = "\\t";
+               else if(character == '\r')
+                  key = "\\r";
             
-            else
-                key = String.valueOf(ch);
+               else
+                  key = String.valueOf(character);
 
 
-            int count = map.getOrDefault(key, 0);
-            map.put(key, count+1);
-        }
+               int count = mapper.getOrDefault(key, 0);
+               mapper.put(key, count+1);
+         }
     }
+    
     public static void main(String args[])
     {
-
-       try
-       {
-           builtMap(args[0]);
-           for(Map.Entry<String, Integer> entry : map.entrySet()){
-               output.write("The character "+entry.getKey()+" appeared exactly "+entry.getValue()+" times ");
-               output.write("\n");
-           }
-           output.close();
-       }
-       catch (Exception ex){};
+        try
+        {
+            buildMap(args[0]);
+            for(Map.Entry<String, Integer> entry : mapper.entrySet()){
+                outputWriter.write("The character "+entry.getKey()+" appeared exactly "+entry.getValue()+" times ");
+                outputWriter.write("\n");
+            }
+            outputWriter.close();
+         }
+        catch (Exception ex){};
 
     }
 }
