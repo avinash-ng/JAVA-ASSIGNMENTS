@@ -9,6 +9,9 @@
  * The only way to insert and remove elements from an SList is through SListIterator. Write code to demonstrate SList.
 */
 import java.util.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 class Node<T>{
     T data;
     Node<T> next;
@@ -17,8 +20,8 @@ class Node<T>{
 
     }
 
-    Node (T d){
-        data = d;
+    Node (T data){
+        this.data = data;
         next = null;
     }
 
@@ -32,8 +35,8 @@ class SList<T> {
         head = null;
     }
 
-    SList(Node<T> h){
-        head = h;
+    SList(Node<T> node){
+        head = node;
     }
 
     public String toString(){
@@ -48,8 +51,10 @@ class SList<T> {
 class SListIterator<T> {
     Node<T> head;
     int size = 0;
-    SListIterator(Node<T> h){
-        head = h;
+    Logger logger = Logger.getLogger(SListIterator.class.getName());
+    
+    SListIterator(Node<T> head){
+        this.head = head;
     }
 
 
@@ -59,19 +64,21 @@ class SListIterator<T> {
             head =  new Node<T>(obj);
         }
         else{
-            Node<T> curr = head;
-            while(curr.next != null){
-                curr = curr.next;
+            Node<T> current = head;
+            while(current.next != null){
+                current = current.next;
             }
-            curr.next = new Node<T>(obj);
+            current.next = new Node<T>(obj);
         }
 
         size += 1;
     }
 
+    
     public void deleteNode(T obj){
         if(head == null){
-            System.out.println("Empty list");
+//             System.out.println("Empty list");
+            logger.log(Level.INFO, " Empty list ");
 
         }
         else if(head.data == obj){
@@ -79,22 +86,24 @@ class SListIterator<T> {
             size -= 1;
         }
         else {
-            Node<T> prev = head;
-            Node<T> curr = head.next;
-            while(curr.data != obj){
-                prev = curr;
-                curr = curr.next;
+            Node<T> previous = head;
+            Node<T> current = head.next;
+            while(current.data != obj){
+                previous = current;
+                current = current.next;
             }
-            prev.next = curr.next;
+            previous.next = current.next;
             size -= 1;
         }
     }
 
+    
     public void printList(){
-        Node<T> iter = head;
-        while (iter != null){
-            System.out.println(iter.data);
-            iter = iter.next;
+        Node<T> current = head;
+        while (current != null){
+//             System.out.println(iter.data);
+            logger.log(Level.INFO, current.data + "");
+            current = current.next;
         }
     }
 
