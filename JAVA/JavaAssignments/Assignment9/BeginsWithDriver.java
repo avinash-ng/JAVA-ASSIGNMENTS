@@ -6,15 +6,26 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class BeginsWithDriver {
-    public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
+    public static boolean startsWithCapsAndEndsWithPeriod(String input) {
         String regex = "^[A-Z].*[.]$";
+         Pattern pattern = Pattern.compile(regex);
+         Matcher matcherObj = pattern.matcher(input);
+         return matcherObj.matches();
+    }
+    public static void main(String args[]){
+        Logger logger = Logger.getLogger(BeginsWithDriver.class.getName());
+        Scanner sc = new Scanner(System.in);        
         String input = sc.next();
-        Pattern p = Pattern.compile(regex);
-        Matcher obj = p.matcher(input);
-        boolean val = obj.matches();
-        System.out.print(val);
+        boolean hasregex = startsWithCapsAndEndsWithPeriod(input);
+        if(hasregex == true)    
+              logger.log(Level.INFO, " has regex ");
+        else
+            logger.log(Level.INFO, " does not have regex ");
+       
+        
     }
 }
